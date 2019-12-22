@@ -1,0 +1,25 @@
+{
+  "name": "developer-profile-generator",
+  "version": "1.0.0",
+  "description": "\"profile Generator\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevie2codes/Developer-Profile-Generator.git"
+  },
+  "author": "\"Stephen Webb\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stevie2codes/Developer-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/stevie2codes/Developer-Profile-Generator#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "electron": "^7.1.7",
+    "electron-html-to": "^2.6.0",
+    "inquirer": "^7.0.1"
+  }
+}

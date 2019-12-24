@@ -36,13 +36,13 @@ function promptUser() {
         //         })
 
         //     }
-    
 
-.then(function (data) {
-                const page = generateHTML(data);
 
-                return writeFile("index.html", page);
-            })
+        .then(function (data) {
+            const page = html.generateHTML(data);
+
+            return writeFileAsync("index.html", page);
+        })
         .then(function () {
             console.log("success!");
         })
@@ -51,6 +51,6 @@ function promptUser() {
             console.log(err);
 
         });
-    
-    }
-    promptUser();
+
+}
+promptUser();

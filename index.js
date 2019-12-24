@@ -27,17 +27,6 @@ function promptUser() {
         }
     ])
 
-        // .then(function ({ username }) {
-        //     const queryUrl = `https://api.github.com/users/${username}`;
-
-        //     axios.get(queryUrl).then(function (res) {
-        //         const repoNames = res.data.map(function (repo) {
-        //             return repo.name;
-        //         })
-
-        //     }
-
-
         .then(function (data) {
             const page = html.generateHTML(data);
 
@@ -52,5 +41,6 @@ function promptUser() {
 
         });
 
-}
+    }
+
 promptUser();

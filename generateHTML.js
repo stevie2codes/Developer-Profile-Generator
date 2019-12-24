@@ -36,8 +36,38 @@ function generateHTML(data) {
       <link href="https://fonts.googleapis.com/css?family=BioRhyme|Cabin&display=swap" rel="stylesheet">
       <title>Document</title>
       </head>
-    <body>
-    <div class="wrapper"></div>
+      <body>
+      <div class="wrapper">
+      <div class="photo-header">
+        <img src="" alt="profile picture">
+        <h1>Hello</h1>
+        <h2>my name is</h2>
+        <div class="workExp-date">Work Date</div>
+      </div>
+      <div class="links-nav">
+        <a class="nav-link" href="">link1</a>
+        <a class="nav-link" href="">link2</a>
+        <a class="nav-link" href="">link3</a>
+      </div>
+      <main>
+        <div class="container">
+          <div class="row">
+            <div class="card col">
+              test
+            </div>
+            <div class="card col">
+              test
+            </div>
+            <div class="card col">
+              test
+            </div>
+            <div class="card col">
+              test
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
       <style>
           @page {
             margin: 0;

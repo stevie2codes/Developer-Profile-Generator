@@ -34,7 +34,7 @@ function generateHTML(data) {
       <meta http-equiv="X-UA-Compatible" content="ie=edge" />
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"/>
       <link href="https://fonts.googleapis.com/css?family=BioRhyme|Cabin&display=swap" rel="stylesheet">
-      <title>Document</title>
+      <title>Profile</title>
       </head>
       <body>
       <div class="wrapper">
@@ -44,30 +44,34 @@ function generateHTML(data) {
         <h2>my name is</h2>
         <div class="workExp-date">Work Date</div>
       </div>
-      <div class="links-nav">
-        <a class="nav-link" href="">link1</a>
-        <a class="nav-link" href="">link2</a>
-        <a class="nav-link" href="">link3</a>
+      <div class="nav-link">
+        <a class="links-nav" href="">location</a>
+        <a class="links-nav" href="">gitHub</a>
+        <a class="links-nav" href="">blog</a>
       </div>
+   
       <main>
-        <div class="container">
+        
+        <div class="container ">
+            <h4>Bio is here and ready</h3>
           <div class="row">
+            
             <div class="card col">
-              test
+             <h4>Public Repositories</h3>
             </div>
             <div class="card col">
-              test
+              <h4>GitHub Stars</h3>
             </div>
             <div class="card col">
-              test
+              <h4>followers</h3>
             </div>
             <div class="card col">
-              test
+              <h4>following</h3>
             </div>
           </div>
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
       <style>
           @page {
             margin: 0;

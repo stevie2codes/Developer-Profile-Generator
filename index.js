@@ -11,7 +11,7 @@ const electron = require('electron');
 const axios = require("axios");
 const writeFileAsync = util.promisify(fs.writeFile);
 
-
+let followers = null;
 
 function promptUser() {
     return inquirer.prompt([

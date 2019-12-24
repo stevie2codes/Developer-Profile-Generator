@@ -23,7 +23,7 @@ const colors = {
     headerColor: "white",
     photoBorderColor: "white"
   }
-};
+}
 
 function generateHTML(data) {
   return `<!DOCTYPE html>
@@ -35,6 +35,9 @@ function generateHTML(data) {
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"/>
       <link href="https://fonts.googleapis.com/css?family=BioRhyme|Cabin&display=swap" rel="stylesheet">
       <title>Document</title>
+      </head>
+    <body>
+    <div class="wrapper"></div>
       <style>
           @page {
             margin: 0;
@@ -170,5 +173,10 @@ function generateHTML(data) {
             zoom: .75; 
           } 
          }
-      </style>`
+      </style>
+        
+     
+     
+      </body>
+      </html>`
         }

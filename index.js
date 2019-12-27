@@ -10,7 +10,7 @@ const util = require('util');
 const electron = require('electron');
 const axios = require("axios");
 const writeFileAsync = util.promisify(fs.writeFile);
-let image = null;
+let avatar_url = null;
 
 function promptUser(){
     return inquirer.prompt([
@@ -29,11 +29,18 @@ function promptUser(){
    async function init() {
        try{
            const data = await promptUser();
-           const page =   html.generateHTML(data);
+           
+           const { username } = data;
            const queryURL = `https://api.github.com/users/${username}`;
            axios
            .get(queryURL)
-           await writeFileAsync("index.html", page);
+            .then(function(res){
+                console.log(res.data);
+                 avatar_url = res.data.avatar_url;
+                 const page =   html.generateHTML(data,avatar_url);
+                writeFileAsync("index.html", page);
+            })
+           
        }
        catch(err){
                console.log(err);

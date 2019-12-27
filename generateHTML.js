@@ -25,7 +25,7 @@ const colors = {
   }
 }
 
-function generateHTML(data,avatar, name, bio, repos, stars, followers, following) {
+function generateHTML(data, avatar, name, bio, repos, stars, followers, following, location, gitHub, blog) {
   return `<!DOCTYPE html>
 <html lang="en">
    <head>
@@ -42,13 +42,14 @@ function generateHTML(data,avatar, name, bio, repos, stars, followers, following
         <img src="${avatar}" alt="profile picture">
         <h1>Hello</h1>
         <h2>${name}</h2>
-        <div class="workExp-date">Work Date</div>
+        
+      
+      <div class="links-nav">
+      <i class="fas fa-location-arrow"> <a class="nav-link"${location}"><h6>${location}</h6></a></i>
+      <i class="fab fa-github"><a class="nav-link" href="${gitHub}"><h6>GitHub</h6></a></i>
+      <i class="fas fa-blog"><a class="nav-link" href="${blog}"><h6>blog</h6></a></i>
       </div>
-      <div class="nav-link">
-        <a class="links-nav" href="">location</a>
-        <a class="links-nav" href="">gitHub</a>
-        <a class="links-nav" href="">blog</a>
-      </div>
+   </div>
    
       <main>
         
@@ -217,9 +218,9 @@ function generateHTML(data,avatar, name, bio, repos, stars, followers, following
      
       </body>
       </html>`
-        }
+}
 
-        module.exports= {
-          colors: colors,
-          generateHTML: generateHTML
-        }
+module.exports = {
+  colors: colors,
+  generateHTML: generateHTML
+}

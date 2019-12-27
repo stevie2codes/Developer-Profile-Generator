@@ -10,10 +10,9 @@ const util = require('util');
 const electron = require('electron');
 const axios = require("axios");
 const writeFileAsync = util.promisify(fs.writeFile);
+let image = null;
 
-let followers = null;
-
-function promptUser() {
+function promptUser(){
     return inquirer.prompt([
         {
             type: "input",
@@ -25,22 +24,19 @@ function promptUser() {
             name: "color",
             message: "Whats your favorite color?"
         }
-    ])
-
-        .then(function (data) {
-            const page = html.generateHTML(data);
-
-            return writeFileAsync("index.html", page);
-        })
-        .then(function () {
-            console.log("success!");
-        })
-
-        .catch(function (err) {
-            console.log(err);
-
-        });
-
+    ]);
+}
+   async function init() {
+       try{
+           const data = await promptUser();
+           const page =   html.generateHTML(data);
+           const queryURL = `https://api.github.com/users/${username}`;
+           axios
+           .get(queryURL)
+           await writeFileAsync("index.html", page);
+       }
+       catch(err){
+               console.log(err);
+       }
     }
-
-promptUser();
+    init();

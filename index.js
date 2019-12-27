@@ -10,6 +10,7 @@ const util = require('util');
 const electron = require('electron');
 const axios = require("axios");
 const writeFileAsync = util.promisify(fs.writeFile);
+const googleKey = "AIzaSyDUvmj8-vG_seYNx8UA1pwn1fi2XI7egfw";
 
 function promptUser() {
     return inquirer.prompt([
@@ -34,7 +35,7 @@ async function init() {
         axios
             .get(queryURL)
             .then(function (res) {
-                console.log(res.data);
+                // console.log(res.data);
                 avatar = res.data.avatar_url;
                 name = res.data.name;
                 bio = res.data.bio;
@@ -43,14 +44,15 @@ async function init() {
                 following = res.data.following;
                 blog = res.data.blog;
                 location = res.data.location;
-                gitHub = res.data.url;
+                gitHub = res.data.html_url;
 
                 axios
                     .get(queryURL + "/starred")
                     .then(function (res) {
                         // console.log(res.data)
                         stars = res.data.length;
-                        const page = html.generateHTML(data, avatar, name, bio, repos, stars, followers, following,location, gitHub, blog);
+                        googleLoc = `https://maps.googleapis.com/maps/api/staticmap?center=${location}&zoom=12&size=400x400&key=${googleKey}`
+                        const page = html.generateHTML(data, avatar, name, bio, repos, stars, followers, following, location, gitHub, blog, googleLoc);
                         writeFileAsync("index.html", page);
                     })
             })

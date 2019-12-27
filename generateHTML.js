@@ -25,7 +25,7 @@ const colors = {
   }
 }
 
-function generateHTML(data, avatar, name, bio, repos, stars, followers, following, location, gitHub, blog) {
+function generateHTML(data, avatar, name, bio, repos, stars, followers, following, location, gitHub, blog,googleLoc) {
   return `<!DOCTYPE html>
 <html lang="en">
    <head>
@@ -45,7 +45,7 @@ function generateHTML(data, avatar, name, bio, repos, stars, followers, followin
         
       
       <div class="links-nav">
-      <i class="fas fa-location-arrow"> <a class="nav-link"${location}"><h6>${location}</h6></a></i>
+      <i class="fas fa-location-arrow"> <a class="nav-link"href="${googleLoc}"><h6>${location}</h6></a></i>
       <i class="fab fa-github"><a class="nav-link" href="${gitHub}"><h6>GitHub</h6></a></i>
       <i class="fas fa-blog"><a class="nav-link" href="${blog}"><h6>blog</h6></a></i>
       </div>

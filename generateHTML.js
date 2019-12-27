@@ -3,7 +3,7 @@ const colors = {
     wrapperBackground: "#E6E1C3",
     headerBackground: "#C1C72C",
     headerColor: "black",
-    photoBorderColor: "#black"
+    photoBorderColor: "black"
   },
   blue: {
     wrapperBackground: "#5F64D3",
@@ -25,7 +25,7 @@ const colors = {
   }
 }
 
-function generateHTML(data,avatar_url) {
+function generateHTML(data,avatar, name, bio, repos, stars, followers, following) {
   return `<!DOCTYPE html>
 <html lang="en">
    <head>
@@ -39,9 +39,9 @@ function generateHTML(data,avatar_url) {
       <body>
       <div class="wrapper">
       <div class="photo-header">
-        <img src="${avatar_url}" alt="profile picture">
+        <img src="${avatar}" alt="profile picture">
         <h1>Hello</h1>
-        <h2>my name is</h2>
+        <h2>${name}</h2>
         <div class="workExp-date">Work Date</div>
       </div>
       <div class="nav-link">
@@ -53,20 +53,24 @@ function generateHTML(data,avatar_url) {
       <main>
         
         <div class="container ">
-            <h4>Bio is here and ready</h3>
+            <h4>${bio}</h3>
           <div class="row">
             
             <div class="card col">
-             <h4>Public Repositories</h3>
+             <h4>Public Repositories</h4>
+             <h5>${repos}</h5>
             </div>
             <div class="card col">
-              <h4>GitHub Stars</h3>
+              <h4>GitHub Stars</h4>
+              <h5>${stars}</h5>
             </div>
             <div class="card col">
-              <h4>followers</h3>
+              <h4>followers</h4>
+              <h5>${followers}</h5>
             </div>
             <div class="card col">
-              <h4>following</h3>
+              <h4>following</h4>
+              <h5>${following}</h5>
             </div>
           </div>
         </div>

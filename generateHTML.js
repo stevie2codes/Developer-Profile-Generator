@@ -40,8 +40,8 @@ function generateHTML(data, avatar, name, bio, repos, stars, followers, followin
       <div class="wrapper">
       <div class="photo-header">
         <img src="${avatar}" alt="profile picture">
-        <h1>Hello</h1>
-        <h2>${name}</h2>
+        <h1>Hi!</h1>
+        <h2>I'm ${name}</h2>
         
       
       <div class="links-nav">
@@ -54,7 +54,7 @@ function generateHTML(data, avatar, name, bio, repos, stars, followers, followin
       <main>
         
         <div class="container ">
-            <h4>${bio}</h3>
+            <h4>${bio}</h4>
           <div class="row">
             
             <div class="card col">
@@ -141,6 +141,7 @@ function generateHTML(data, avatar, name, bio, repos, stars, followers, followin
          padding: 10px;
          width: 95%;
          border-radius: 6px;
+         box-shadow: 0px 5px 15px -3px black;
          }
          .photo-header img {
          width: 250px;
@@ -194,6 +195,7 @@ function generateHTML(data, avatar, name, bio, repos, stars, followers, followin
            background-color: ${colors[data.color].headerBackground};
            color: ${colors[data.color].headerColor};
            margin: 20px;
+           box-shadow: 0px 5px 15px -3px black;
          }
          
          .col {

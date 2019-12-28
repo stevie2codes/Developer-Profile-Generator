@@ -1,11 +1,6 @@
 const html = require("./generateHTML");
 const inquirer = require("inquirer");
-const fs = require("fs");
-
-//     convertFactory = require('electron-html-to');
-// const conversion = convertFactory({
-//     converterPath: convertFactory.converters.PDF
-// });
+const fs = require("fs"),convertFactory = require('electron-html-to');
 const util = require('util');
 const electron = require('electron');
 const axios = require("axios");
@@ -54,9 +49,22 @@ async function init() {
                         googleLoc = `https://maps.googleapis.com/maps/api/staticmap?center=${location}&zoom=12&size=400x400&key=${googleKey}`
                         const page = html.generateHTML(data, avatar, name, bio, repos, stars, followers, following, location, gitHub, blog, googleLoc);
                         writeFileAsync("index.html", page);
-                    })
-            })
 
+                        const conversion = convertFactory({
+                            converterPath: `index.js`
+                        });
+
+                        conversion({ html: `${page}` }), function (err, result) {
+                            if (err) {
+                                console.log(err);
+                            }
+                            result.stream.pipe(fs.createWriteStream(`profile.pdf`));
+                        }
+                    })
+
+
+
+            })
     }
     catch (err) {
         console.log(err);

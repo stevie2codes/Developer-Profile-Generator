@@ -15,16 +15,16 @@ const googleKey = "AIzaSyDUvmj8-vG_seYNx8UA1pwn1fi2XI7egfw";
 //Prompt user questions//
 function promptUser() {
     return inquirer.prompt([{
-        type: "input",
-        name: "username",
-        message: "What is Your gitHub userName?"
-    },
-    {
-        type: "rawlist",
-        name: "color",
-        choices: ["red", "blue", "green", "pink"],
-        message: "Pick a color theme for your profile"
-    }
+            type: "input",
+            name: "username",
+            message: "What is Your gitHub userName?"
+        },
+        {
+            type: "rawlist",
+            name: "color",
+            choices: ["red", "blue", "green", "pink"],
+            message: "Pick a color theme for your profile"
+        }
     ]);
 }
 //getting data from github json 
@@ -61,9 +61,9 @@ async function init() {
 
                         //File Conversion
                         conversion({
-                            file: 'index.html',
-                            html: page
-                        },
+                                file: 'index.html',
+                                html: page
+                            },
                             function (err, result) {
                                 if (err) {
                                     return console.log(err);

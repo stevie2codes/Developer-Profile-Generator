@@ -10,21 +10,36 @@ node index.js
 ```
 * The program will prompt you to enter your GitHub UserName.
 * Then from the selected list choose a color.
-* BOOM a unique profile in PDF format will be populated!
+* The PDF will be populated with the following:
 
-## Prerequisites and Dependencies / Built with
+Profile image
+User name
+Links to the following:
+User location via Google Maps
+User GitHub profile
+User blog
+User bio
+Number of public repositories
+Number of followers
+Number of GitHub stars
+Number of users following
 
-# Built with 
+# Prerequisites and Dependencies / Built with
+
+## Built with 
 * Node.JS 
 * JavaScript
+* google Maps API
+* GitHub API
 
-# Dependencies
-   "dependencies": {
-    "axios": "^0.19.0",
-    "electron": "^5.0.3",
-    "electron-html-to": "^2.6.0",
-    "fs": "0.0.1-security",
-    "inquirer": "^7.0.1"
-  }
+## Dependencies
+   * axios: "^0.19.0",
+   * electron: "^5.0.3",
+   * electron-html-to: "^2.6.0",
+   * fs: "0.0.1-security",
+   * inquirer: "^7.0.1"
+
+
+  
 
 

@@ -2,6 +2,7 @@
  A command-line application that dynamically generates a PDF profile from a GitHub username.
 
 ![dev-Demo](demo-gif.gif)
+![dev-PDF](Dev-profile.pdf)
 
 ## How to use the application
 Open the index.js in command line and run the script

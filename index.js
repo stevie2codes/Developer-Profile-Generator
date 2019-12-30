@@ -11,6 +11,8 @@ const axios = require("axios");
 const writeFileAsync = util.promisify(fs.writeFile);
 const googleKey = "AIzaSyDUvmj8-vG_seYNx8UA1pwn1fi2XI7egfw";
 
+
+//Prompt user questions//
 function promptUser() {
     return inquirer.prompt([{
         type: "input",
@@ -21,10 +23,11 @@ function promptUser() {
         type: "rawlist",
         name: "color",
         choices: ["red", "blue", "green", "pink"],
-        message: "Whats your favorite color?"
+        message: "Pick a color theme for your profile"
     }
     ]);
 }
+//getting data from github json 
 async function init() {
     try {
         const data = await promptUser();
@@ -46,17 +49,20 @@ async function init() {
                 location = res.data.location;
                 gitHub = res.data.html_url;
 
+                //new call to github to get number of stars in repo
                 axios
                     .get(queryURL + "/starred")
                     .then(function (res) {
                         // console.log(res.data)
                         stars = res.data.length;
-                        googleLoc = `https://maps.googleapis.com/maps/api/staticmap?center=${location}&zoom=12&size=400x400&key=${googleKey}`
+                        googleLoc = `https://maps.googleapis.com/maps/api/staticmap?center=${location}&zoom=12&size=400x400&key=${googleKey}`;
                         const page = html.generateHTML(data, avatar, name, bio, repos, stars, followers, following, location, gitHub, blog, googleLoc);
-                        writeFileAsync("index.html", page);   
+                        writeFileAsync("index.html", page);
+
+                        //File Conversion
                         conversion({
-                            file:'index.html',
-                            html: page         
+                            file: 'index.html',
+                            html: page
                         },
                             function (err, result) {
                                 if (err) {

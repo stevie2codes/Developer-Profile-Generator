@@ -10,8 +10,8 @@ node index.js
 ```
 * The program will prompt you to enter your GitHub UserName.
 * Then from the selected list choose a color.
-* The PDF will be populated with the following:
 
+### The PDF will be populated with the following:
 - Profile image
 - User name
 - Links to the following:

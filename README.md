@@ -12,17 +12,17 @@ node index.js
 * Then from the selected list choose a color.
 * The PDF will be populated with the following:
 
-Profile image
-User name
-Links to the following:
-User location via Google Maps
-User GitHub profile
-User blog
-User bio
-Number of public repositories
-Number of followers
-Number of GitHub stars
-Number of users following
+- Profile image
+- User name
+- Links to the following:
+- User location via Google Maps
+- User GitHub profile
+- User blog
+- User bio
+- Number of public repositories
+- Number of followers
+- Number of GitHub stars
+- Number of users following
 
 # Prerequisites and Dependencies / Built with
 

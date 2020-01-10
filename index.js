@@ -9,7 +9,10 @@ const util = require('util');
 const electron = require('electron');
 const axios = require("axios");
 const writeFileAsync = util.promisify(fs.writeFile);
-const googleKey = "AIzaSyDUvmj8-vG_seYNx8UA1pwn1fi2XI7egfw";
+
+require('dotenv').config();
+
+const googleKey = process.env.API_KEY;
 
 
 //Prompt user questions//
@@ -68,8 +71,8 @@ async function init() {
                                 if (err) {
                                     return console.log(err);
                                 }
-                                console.log(result.numberOfPages);
-                                console.log(result.logs);
+                                // console.log(result.numberOfPages);
+                                // console.log(result.logs);
                                 result.stream.pipe(fs.createWriteStream("Dev-profile.pdf"));
                                 conversion.kill();
                             });
@@ -78,7 +81,7 @@ async function init() {
     } catch (err) {
         console.log(err);
     }
-    console.log("successfully created a Portfolio!");
+    console.log("successfully created a Portfolio! Check it out in the Root directory!");
 
 }
 init();
